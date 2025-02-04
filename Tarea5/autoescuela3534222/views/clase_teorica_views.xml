@@ -1,15 +1,14 @@
-    <?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <!-- Vista de Clase Teórica -->
     <record id="view_form_clase_teorica" model="ir.ui.view">
-        <field name="name">autoescuela3534222.clase_teorica.form</field>
-        <field name="model">autoescuela3534222.clase_teorica</field>
+        <field name="name">autoescuela.clase_teorica.form</field>
+        <field name="model">autoescuela.clase_teorica</field>
         <field name="arch" type="xml">
             <form string="Clase Teórica">
                 <sheet>
                     <group>
                         <field name="fecha"/>
-                        <field name="hora"/>
+                        <field name="hora" widget="float_time"/> 
                         <field name="tema"/>
                         <field name="profesor_id"/>
                     </group>
@@ -19,8 +18,8 @@
     </record>
 
     <record id="view_tree_clase_teorica" model="ir.ui.view">
-        <field name="name">autoescuela3534222.clase_teorica.tree</field>
-        <field name="model">autoescuela3534222.clase_teorica</field>
+        <field name="name">autoescuela.clase_teorica.tree</field>
+        <field name="model">autoescuela.clase_teorica</field>
         <field name="arch" type="xml">
             <tree string="Clases Teóricas">
                 <field name="fecha"/>
@@ -34,9 +33,7 @@
     <menuitem id="menu_clases_teoricas" name="Clases Teóricas" parent="menu_autoescuela_root" sequence="5"/>
     <record id="action_clase_teorica" model="ir.actions.act_window">
         <field name="name">Clases Teóricas</field>
-        <field name="res_model">autoescuela3534222.clase_teorica</field>
+        <field name="res_model">autoescuela.clase_teorica</field>
         <field name="view_mode">tree,form</field>
     </record>
-    <menuitem id="menu_action_clase_teorica" name="Lista de Clases Teóricas"
-              parent="menu_clases_teoricas" action="action_clase_teorica"/>
 </odoo>

@@ -14,7 +14,8 @@
         'views/clase_teorica_views.xml',
         'views/examen_teorico_views.xml',
         'views/examen_practico_views.xml',
-        'views/menu_views.xml',
+        'views/menu_views.xml',   # Aquí se definen los menús principales
+        'views/menu_actions.xml', # Aquí se asignan acciones a los menús
         'data/demo_data.xml',
     ],
     'installable': True,

@@ -1,7 +1,7 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_alumno,access.autoescuela.alumno,model_autoescuela3534222_alumno,,1,1,1,1
-access_profesor,access.autoescuela.profesor,model_autoescuela3534222_profesor,,1,1,1,1
-access_clase_practica,access.autoescuela.clase_practica,model_autoescuela3534222_clase_practica,,1,1,1,1
-access_clase_teorica,access.autoescuela.clase_teorica,model_autoescuela3534222_clase_teorica,,1,1,1,1
-access_examen_practico,access.autoescuela.examen_practico,model_autoescuela3534222_examen_practico,,1,1,1,1
-access_examen_teorico,access.autoescuela.examen_teorico,model_autoescuela3534222_examen_teoric,,1,1,1,1
+access_alumno,access.autoescuela.alumno,model_autoescuela_alumno,,1,1,1,1
+access_profesor,access.autoescuela.profesor,model_autoescuela_profesor,,1,1,1,1
+access_clase_practica,access.autoescuela.clase_practica,model_autoescuela_clase_practica,,1,1,1,1
+access_clase_teorica,access.autoescuela.clase_teorica,model_autoescuela_clase_teorica,,1,1,1,1
+access_examen_practico,access.autoescuela.examen_practico,model_autoescuela_examen_practico,,1,1,1,1
+access_examen_teorico,access.autoescuela.examen_teorico,model_autoescuela_examen_teorico,,1,1,1,1

@@ -1,14 +1,14 @@
- <?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <odoo>
-<!-- Vista de Examen Práctico -->
     <record id="view_form_examen_practico" model="ir.ui.view">
-        <field name="name">autoescuela3534222.examen_practico.form</field>
-        <field name="model">autoescuela3534222.examen_practico</field>
+        <field name="name">autoescuela.examen_practico.form</field>
+        <field name="model">autoescuela.examen_practico</field>
         <field name="arch" type="xml">
             <form string="Examen Práctico">
                 <sheet>
                     <group>
                         <field name="fecha"/>
+                        <field name="hora" widget="float_time"/> 
                         <field name="alumno_id"/>
                         <field name="resultado"/>
                     </group>
@@ -18,11 +18,12 @@
     </record>
 
     <record id="view_tree_examen_practico" model="ir.ui.view">
-        <field name="name">autoescuela3534222.examen_practico.tree</field>
-        <field name="model">autoescuela3534222.examen_practico</field>
+        <field name="name">autoescuela.examen_practico.tree</field>
+        <field name="model">autoescuela.examen_practico</field>
         <field name="arch" type="xml">
             <tree string="Exámenes Prácticos">
                 <field name="fecha"/>
+                <field name="hora"/> 
                 <field name="alumno_id"/>
                 <field name="resultado"/>
             </tree>
@@ -31,9 +32,7 @@
 
     <record id="action_examen_practico" model="ir.actions.act_window">
         <field name="name">Exámenes Prácticos</field>
-        <field name="res_model">autoescuela3534222.examen_practico</field>
+        <field name="res_model">autoescuela.examen_practico</field>
         <field name="view_mode">tree,form</field>
     </record>
-    <menuitem id="menu_action_examen_practico" name="Lista de Exámenes Prácticos"
-              parent="menu_examenes" action="action_examen_practico"/>
 </odoo>

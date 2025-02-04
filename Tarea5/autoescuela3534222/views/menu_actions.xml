@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Opciones de Alumnos -->
+    <menuitem id="menu_action_alumno" name="Lista de Alumnos"
+              parent="menu_alumnos" action="action_alumno"/>
+
+    <!-- Opciones de Profesores -->
+    <menuitem id="menu_action_profesor" name="Lista de Profesores"
+              parent="menu_profesores" action="action_profesor"/>
+
+    <!-- Opciones de Clases -->
+    <menuitem id="menu_action_clase_practica" name="Lista de Clases Prácticas"
+              parent="menu_clases_practicas" action="action_clase_practica"/>
+
+    <menuitem id="menu_action_clase_teorica" name="Lista de Clases Teóricas"
+              parent="menu_clases_teoricas" action="action_clase_teorica"/>
+
+    <!-- Opciones de Exámenes -->
+    <menuitem id="menu_action_examen_teorico" name="Lista de Exámenes Teóricos"
+              parent="menu_examen_teorico" action="action_examen_teorico"/>
+
+    <menuitem id="menu_action_examen_practico" name="Lista de Exámenes Prácticos"
+              parent="menu_examen_practico" action="action_examen_practico"/>
+</odoo>
