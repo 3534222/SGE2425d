@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_form_clase_practica" model="ir.ui.view">
+        <field name="name">autoescuela3534222.clase_practica.form</field>
+        <field name="model">autoescuela3534222.clase_practica</field>
+        <field name="arch" type="xml">
+            <form string="Clase Práctica">
+                <sheet>
+                    <group>
+                        <field name="fecha"/>
+                        <field name="hora"/>
+                        <field name="alumno_id"/>
+                        <field name="profesor_id"/>
+                        <field name="estado"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_tree_clase_practica" model="ir.ui.view">
+        <field name="name">autoescuela3534222.clase_practica.tree</field>
+        <field name="model">autoescuela3534222.clase_practica</field>
+        <field name="arch" type="xml">
+            <tree string="Clases Prácticas">
+                <field name="fecha"/>
+                <field name="hora"/>
+                <field name="alumno_id"/>
+                <field name="profesor_id"/>
+                <field name="estado"/>
+            </tree>
+        </field>
+    </record>
+
+    <menuitem id="menu_clases_practicas" name="Clases Prácticas" parent="menu_autoescuela_root" sequence="4"/>
+    
+    <record id="action_clase_practica" model="ir.actions.act_window">
+        <field name="name">Clases Prácticas</field>
+        <field name="res_model">autoescuela3534222.clase_practica</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_action_clase_practica" name="Lista de Clases"
+              parent="menu_clases_practicas" action="action_clase_practica"/>
+</odoo>

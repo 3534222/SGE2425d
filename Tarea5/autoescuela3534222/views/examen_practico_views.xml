@@ -1,0 +1,39 @@
+ <?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<!-- Vista de Examen Práctico -->
+    <record id="view_form_examen_practico" model="ir.ui.view">
+        <field name="name">autoescuela3534222.examen_practico.form</field>
+        <field name="model">autoescuela3534222.examen_practico</field>
+        <field name="arch" type="xml">
+            <form string="Examen Práctico">
+                <sheet>
+                    <group>
+                        <field name="fecha"/>
+                        <field name="alumno_id"/>
+                        <field name="resultado"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_tree_examen_practico" model="ir.ui.view">
+        <field name="name">autoescuela3534222.examen_practico.tree</field>
+        <field name="model">autoescuela3534222.examen_practico</field>
+        <field name="arch" type="xml">
+            <tree string="Exámenes Prácticos">
+                <field name="fecha"/>
+                <field name="alumno_id"/>
+                <field name="resultado"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_examen_practico" model="ir.actions.act_window">
+        <field name="name">Exámenes Prácticos</field>
+        <field name="res_model">autoescuela3534222.examen_practico</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem id="menu_action_examen_practico" name="Lista de Exámenes Prácticos"
+              parent="menu_examenes" action="action_examen_practico"/>
+</odoo>

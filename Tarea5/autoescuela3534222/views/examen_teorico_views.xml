@@ -1,0 +1,40 @@
+  <?xml version="1.0" encoding="utf-8"?>
+<odoo>
+ <!-- Vista de Examen Teórico -->
+    <record id="view_form_examen_teorico" model="ir.ui.view">
+        <field name="name">autoescuela3534222.examen_teorico.form</field>
+        <field name="model">autoescuela3534222.examen_teorico</field>
+        <field name="arch" type="xml">
+            <form string="Examen Teórico">
+                <sheet>
+                    <group>
+                        <field name="fecha"/>
+                        <field name="alumno_id"/>
+                        <field name="nota"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_tree_examen_teorico" model="ir.ui.view">
+        <field name="name">autoescuela3534222.examen_teorico.tree</field>
+        <field name="model">autoescuela3534222.examen_teorico</field>
+        <field name="arch" type="xml">
+            <tree string="Exámenes Teóricos">
+                <field name="fecha"/>
+                <field name="alumno_id"/>
+                <field name="nota"/>
+            </tree>
+        </field>
+    </record>
+
+    <menuitem id="menu_examenes" name="Exámenes" parent="menu_autoescuela_root" sequence="6"/>
+    <record id="action_examen_teorico" model="ir.actions.act_window">
+        <field name="name">Exámenes Teóricos</field>
+        <field name="res_model">autoescuela3534222.examen_teorico</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem id="menu_action_examen_teorico" name="Lista de Exámenes Teóricos"
+              parent="menu_examenes" action="action_examen_teorico"/>
+</odoo>

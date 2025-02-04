@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_form_profesor" model="ir.ui.view">
+        <field name="name">autoescuela3534222.profesor.form</field>
+        <field name="model">autoescuela3534222.profesor</field>
+        <field name="arch" type="xml">
+            <form string="Profesor">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="dni"/>
+                        <field name="telefono"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_tree_profesor" model="ir.ui.view">
+        <field name="name">autoescuela3534222.profesor.tree</field>
+        <field name="model">autoescuela3534222.profesor</field>
+        <field name="arch" type="xml">
+            <tree string="Profesores">
+                <field name="name"/>
+                <field name="dni"/>
+                <field name="telefono"/>
+            </tree>
+        </field>
+    </record>
+
+    <menuitem id="menu_profesores" name="Profesores" parent="menu_autoescuela_root" sequence="3"/>
+    
+    <record id="action_profesor" model="ir.actions.act_window">
+        <field name="name">Profesores</field>
+        <field name="res_model">autoescuela3534222.profesor</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_action_profesor" name="Lista de Profesores"
+              parent="menu_profesores" action="action_profesor"/>
+</odoo>
