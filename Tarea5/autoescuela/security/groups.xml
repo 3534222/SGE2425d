@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record model="ir.module.category" id="autoescuela_categoria_group">
+        <field name="name">Autoescuela</field>
+        <field name="description">Gestión de usuarios para el módulo de autoescuela</field>
+        <field name="sequence">100</field>
+    </record>
+
+    <record model="res.groups" id="autoescuela_alumnos">
+        <field name="name">Alumnos de autoescuela</field>
+        <field name="category_id" ref="autoescuela_categoria_group"/>
+        <field name="comment">Usuarios básicos de la autoescuela</field>
+        <field name="users" eval="[(4, ref('base.group_user'))]"/>
+    </record>
+
+    <record model="res.groups" id="autoescuela_profesores">
+        <field name="name">Profesores de autoescuela</field>
+        <field name="category_id" ref="autoescuela_categoria_group"/>
+        <field name="comment">Usuarios intermedios de la autoescuela</field>
+        <field name="users" eval="[(4, ref('base.group_user'))]"/>
+        <field name="implied_ids" eval="[(4, ref('autoescuela_alumnos'))]"/>
+    </record>
+
+    <record model="res.groups" id="autoescuela_admins">
+        <field name="name">Administradores de autoescuela</field>
+        <field name="category_id" ref="autoescuela_categoria_group"/>
+        <field name="comment">Usuarios Administradores de la autoescuela</field>
+        <field name="users" eval="[(4, ref('base.group_user'))]"/>
+        <field name="implied_ids" eval="[(4, ref('autoescuela_profesores'))]"/>
+    </record>
+
+</odoo>

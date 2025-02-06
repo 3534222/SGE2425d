@@ -8,7 +8,7 @@
     'depends': ['base'],
     'data': [
         'security/ir.model.access.csv',
-        'security/groups.xml'
+        'security/groups.xml',
         'views/alumno_views.xml',
         'views/profesor_views.xml',
         'views/clase_practica_views.xml',

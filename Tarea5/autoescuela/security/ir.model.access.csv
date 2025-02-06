@@ -1,5 +1,7 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_alumno,access.autoescuela.alumno,model_autoescuela_alumno,,1,1,1,1
+access_alumno_profesores,access.autoescuela.alumno.profesor,model_autoescuela_alumno,autoescuela_profesores,1,1,0,0
+access_alumno_admins,access.autoescuela.alumno.admin,model_autoescuela_alumno,autoescuela_admins,1,1,1,1
+access_alumno_alumnos,access.autoescuela.alumno.alumno,model_autoescuela_alumno,autoescuela_alumnos,1,0,0,0
 access_profesor,access.autoescuela.profesor,model_autoescuela_profesor,,1,1,1,1
 access_clase_practica,access.autoescuela.clase_practica,model_autoescuela_clase_practica,,1,1,1,1
 access_clase_teorica,access.autoescuela.clase_teorica,model_autoescuela_clase_teorica,,1,1,1,1
