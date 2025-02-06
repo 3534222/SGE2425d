@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+
+    <!-- Vistas de Formulario de Clase Práctica -->
     <record id="view_form_clase_practica" model="ir.ui.view">
         <field name="name">autoescuela.clase_practica.form</field>
         <field name="model">autoescuela.clase_practica</field>
@@ -9,8 +11,8 @@
                     <group>
                         <field name="fecha"/>
                         <field name="hora" widget="float_time"/> 
-                        <field name="alumno_id"/>
-                        <field name="profesor_id"/>
+                        <field name="alumno_id" string="Alumno"/>
+                        <field name="profesor_id" string="Profesor"/>
                         <field name="estado"/>
                     </group>
                 </sheet>
@@ -18,6 +20,7 @@
         </field>
     </record>
 
+    <!-- Vista de lista de Clases Prácticas -->
     <record id="view_tree_clase_practica" model="ir.ui.view">
         <field name="name">autoescuela.clase_practica.tree</field>
         <field name="model">autoescuela.clase_practica</field>
@@ -25,15 +28,14 @@
             <tree string="Clases Prácticas">
                 <field name="fecha"/>
                 <field name="hora"/>
-                <field name="alumno_id"/>
-                <field name="profesor_id"/>
+                <field name="alumno_id" string="Alumno"/>
+                <field name="profesor_id" string="Profesor"/>
                 <field name="estado"/>
             </tree>
         </field>
     </record>
 
-    <menuitem id="menu_clases_practicas" name="Clases Prácticas" parent="menu_autoescuela_root" sequence="4"/>
-    
+    <!-- Acción de la vista -->
     <record id="action_clase_practica" model="ir.actions.act_window">
         <field name="name">Clases Prácticas</field>
         <field name="res_model">autoescuela.clase_practica</field>

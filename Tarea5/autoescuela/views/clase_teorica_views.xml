@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+
+    <!-- Vistas de Formulario de Clase Teórica -->
     <record id="view_form_clase_teorica" model="ir.ui.view">
         <field name="name">autoescuela.clase_teorica.form</field>
         <field name="model">autoescuela.clase_teorica</field>
@@ -10,13 +12,15 @@
                         <field name="fecha"/>
                         <field name="hora" widget="float_time"/> 
                         <field name="tema"/>
-                        <field name="profesor_id"/>
+                        <field name="alumno_id" string="Alumno" widget="many2many_tags"/>
+                        <field name="profesor_id" string="Profesor"/>
                     </group>
                 </sheet>
             </form>
         </field>
     </record>
 
+    <!-- Vista de lista de Clases Teóricas -->
     <record id="view_tree_clase_teorica" model="ir.ui.view">
         <field name="name">autoescuela.clase_teorica.tree</field>
         <field name="model">autoescuela.clase_teorica</field>
@@ -25,12 +29,13 @@
                 <field name="fecha"/>
                 <field name="hora"/>
                 <field name="tema"/>
-                <field name="profesor_id"/>
+                <field name="alumno_id" string="Alumno"/>
+                <field name="profesor_id" string="Profesor"/>
             </tree>
         </field>
     </record>
-
-    <menuitem id="menu_clases_teoricas" name="Clases Teóricas" parent="menu_autoescuela_root" sequence="5"/>
+   
+    <!-- Acción de la vista -->
     <record id="action_clase_teorica" model="ir.actions.act_window">
         <field name="name">Clases Teóricas</field>
         <field name="res_model">autoescuela.clase_teorica</field>

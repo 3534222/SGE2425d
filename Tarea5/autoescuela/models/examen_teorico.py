@@ -11,3 +11,5 @@ class ExamenTeorico(models.Model):
         ('apto', 'Apto'),
         ('no_apto', 'No Apto')
     ], string="Resultado", default='no_apto', required=True)
+
+    

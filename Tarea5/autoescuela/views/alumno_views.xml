@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+
+    <!-- Vistas de Formulario de Alumno -->
     <record id="view_form_alumno" model="ir.ui.view">
         <field name="name">autoescuela.alumno.form</field>
         <field name="model">autoescuela.alumno</field>
@@ -17,6 +19,7 @@
         </field>
     </record>
 
+    <!-- Vista de lista de Alumnos -->
     <record id="view_tree_alumno" model="ir.ui.view">
         <field name="name">autoescuela.alumno.tree</field>
         <field name="model">autoescuela.alumno</field>
@@ -29,11 +32,8 @@
             </tree>
         </field>
     </record>
-
-    <menuitem id="menu_autoescuela_root" name="Autoescuela" sequence="1"/>
-
-    <menuitem id="menu_alumnos" name="Alumnos" parent="menu_autoescuela_root" sequence="2"/>
     
+    <!-- Acción de la vista -->
     <record id="action_alumno" model="ir.actions.act_window">
         <field name="name">Alumnos</field>
         <field name="res_model">autoescuela.alumno</field>

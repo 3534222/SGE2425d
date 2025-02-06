@@ -8,6 +8,7 @@
     'depends': ['base'],
     'data': [
         'security/ir.model.access.csv',
+        'security/groups.xml'
         'views/alumno_views.xml',
         'views/profesor_views.xml',
         'views/clase_practica_views.xml',
@@ -16,6 +17,7 @@
         'views/examen_practico_views.xml',
         'views/menu_views.xml',   # Aquí se definen los menús principales
         'views/menu_actions.xml', # Aquí se asignan acciones a los menús
+        'views/templates.xml',
         'data/demo_data.xml',
     ],
     'installable': True,

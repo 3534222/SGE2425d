@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+
+    <!-- Vistas de Formulario de Examen Teórico -->
     <record id="view_form_examen_teorico" model="ir.ui.view">
         <field name="name">autoescuela.examen_teorico.form</field>
         <field name="model">autoescuela.examen_teorico</field>
@@ -17,6 +19,7 @@
         </field>
     </record>
 
+    <!-- Vista de lista de Exámenes Teóricos -->
     <record id="view_tree_examen_teorico" model="ir.ui.view">
         <field name="name">autoescuela.examen_teorico.tree</field>
         <field name="model">autoescuela.examen_teorico</field>
@@ -30,6 +33,7 @@
         </field>
     </record>
 
+    <!-- Acción de la vista -->
     <record id="action_examen_teorico" model="ir.actions.act_window">
         <field name="name">Exámenes Teóricos</field>
         <field name="res_model">autoescuela.examen_teorico</field>

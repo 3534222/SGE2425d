@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+
+    <!-- Vistas de Formulario de Examen Práctico -->
     <record id="view_form_examen_practico" model="ir.ui.view">
         <field name="name">autoescuela.examen_practico.form</field>
         <field name="model">autoescuela.examen_practico</field>
@@ -17,6 +19,7 @@
         </field>
     </record>
 
+    <!-- Vista de lista de Exámenes Prácticos -->
     <record id="view_tree_examen_practico" model="ir.ui.view">
         <field name="name">autoescuela.examen_practico.tree</field>
         <field name="model">autoescuela.examen_practico</field>
@@ -30,6 +33,7 @@
         </field>
     </record>
 
+    <!-- Acción de la vista -->
     <record id="action_examen_practico" model="ir.actions.act_window">
         <field name="name">Exámenes Prácticos</field>
         <field name="res_model">autoescuela.examen_practico</field>

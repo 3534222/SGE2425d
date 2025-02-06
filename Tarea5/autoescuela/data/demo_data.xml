@@ -8,6 +8,14 @@
         <field name="email">juan.perez@example.com</field>
     </record>
 
+    <record id="demo_alumno_2" model="autoescuela.alumno">
+        <field name="nombre">Angel</field>
+        <field name="apellidos">Martínez López</field>
+        <field name="dni">56245678A</field>
+        <field name="telefono">665323456</field>
+        <field name="email">angel.martinez@example.com</field>
+    </record>
+
     <record id="demo_profesor_1" model="autoescuela.profesor">
         <field name="nombre">Ana</field>
         <field name="apellidos">García Martínez</field>
@@ -17,15 +25,23 @@
     </record>
 
     <record id="demo_clase_practica_1" model="autoescuela.clase_practica">
-        <field name="fecha">2024-02-05</field>
+        <field name="fecha">2025-02-05</field>
         <field name="hora">10.00</field>
         <field name="alumno_id" ref="demo_alumno_1"/>
         <field name="profesor_id" ref="demo_profesor_1"/>
         <field name="estado">pendiente</field>
     </record>
 
+    <record id="demo_clase_teorica_1" model="autoescuela.clase_teorica">
+        <field name="fecha">2025-02-07</field>
+        <field name="hora">11.00</field>
+        <field name="alumno_id" eval="[(6, 0, [ref('demo_alumno_1'), ref('demo_alumno_2')])]"/>
+        <field name="profesor_id" ref="demo_profesor_1"/>
+        <field name="tema">Señales de tráfico</field>
+    </record>
+
     <record id="demo_examen_teorico_1" model="autoescuela.examen_teorico">
-        <field name="fecha">2024-02-10</field>
+        <field name="fecha">2025-02-10</field>
         <field name="hora">10.00</field>
         <field name="alumno_id" ref="demo_alumno_1"/>
         <field name="resultado">no_apto</field>

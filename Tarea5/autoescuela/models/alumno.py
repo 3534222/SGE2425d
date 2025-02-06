@@ -6,10 +6,17 @@ class Alumno(models.Model):
 
     nombre = fields.Char(string="Nombre", required=True)
     apellidos = fields.Char(string="Apellidos", required=True)
-    dni = fields.Char(string="DNI", required=True, unique=True)
-    telefono = fields.Char(string="Teléfono")
+    dni = fields.Char(string="DNI", required=True, unique=True, help="Documento Nacional de Identidad")
+    telefono = fields.Char(string="Teléfono", help="Número de teléfono de contacto")
     email = fields.Char(string="Email")
     clases_practicas = fields.One2many('autoescuela.clase_practica', 'alumno_id', string="Clases Prácticas")
-    clases_teoricas = fields.One2many('autoescuela.clase_teorica', 'alumno_id', string="Clases Teóricas")
+    clases_teoricas = fields.Many2many('autoescuela.clase_teorica', 'alumno_id', string="Clases Teóricas")
     examenes_teoricos = fields.One2many('autoescuela.examen_teorico', 'alumno_id', string="Exámenes Teóricos")
     examenes_practicos = fields.One2many('autoescuela.examen_practico', 'alumno_id', string="Exámenes Prácticos")
+
+    def name_get(self): # Este método es necesario para que el campo Many2one de las clases funcione correctamente
+        result = []
+        for alumno in self:
+            nombre_completo = f"{alumno.nombre} {alumno.apellidos}"
+            result.append((alumno.id, nombre_completo))
+        return result
