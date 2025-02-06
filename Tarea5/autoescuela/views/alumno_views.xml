@@ -13,10 +13,8 @@
                         <field name="apellidos"/>
                         <field name="dni"/>
                         <field name="telefono"/>
-                        <group>
-                            <field name="estado"/>
-                            <button name="aprobar_alumno" type="object" string="Aprobar" class="oe_highlight"/>
-                        </group>
+                        <field name="estado"/>
+                        <button name="aprobar_alumno" type="object" string="Aprobar" class="oe_highlight"/>
                     </group>
                 </sheet>
             </form>

@@ -15,7 +15,7 @@ class Profesor(models.Model):
     clases_practicas = fields.One2many('autoescuela.clase_practica', 'profesor_id', string="Clases Prácticas")
     clases_teoricas = fields.One2many('autoescuela.clase_teorica', 'profesor_id', string="Clases Teóricas")
 
-    def name_get(self): # Este método es necesario para que el campo Many2one de las clases funcione correctamente
+    def name_get(self): # Este método es necesario para unificar el nombre y apellido de profesor
         result = []
         for profesor in self:
             nombre_completo = f"{profesor.nombre} {profesor.apellidos}"
