@@ -13,6 +13,10 @@
                         <field name="apellidos"/>
                         <field name="dni"/>
                         <field name="telefono"/>
+                        <group>
+                            <field name="estado"/>
+                            <button name="aprobar_alumno" type="object" string="Aprobar" class="oe_highlight"/>
+                        </group>
                     </group>
                 </sheet>
             </form>
@@ -29,14 +33,31 @@
                 <field name="apellidos"/>
                 <field name="dni"/>
                 <field name="telefono"/>
+                <field name="estado"/>
             </tree>
         </field>
     </record>
     
+    <!-- Vista de búsqueda de Alumnos con filtro por DNI -->
+    <record id="view_search_alumno" model="ir.ui.view">
+        <field name="name">autoescuela.alumno.search</field>
+        <field name="model">autoescuela.alumno</field>
+        <field name="arch" type="xml">
+            <search string="Buscar Alumno">
+                <field name="dni" string="DNI"/>
+                <field name="nombre" string="Nombre"/>
+                <filter name="estado_pendiente" string="Pendientes" domain="[('estado', '=', 'pendiente')]"/>
+                <filter name="estado_aprobado" string="Aprobados" domain="[('estado', '=', 'aprobado')]"/>
+            </search>
+        </field>
+    </record>
+
+
     <!-- Acción de la vista -->
     <record id="action_alumno" model="ir.actions.act_window">
         <field name="name">Alumnos</field>
         <field name="res_model">autoescuela.alumno</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">tree,form,search</field>
     </record>
+
 </odoo>

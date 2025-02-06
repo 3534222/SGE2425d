@@ -9,8 +9,13 @@ class Alumno(models.Model):
     dni = fields.Char(string="DNI", required=True, unique=True, help="Documento Nacional de Identidad")
     telefono = fields.Char(string="Teléfono", help="Número de teléfono de contacto")
     email = fields.Char(string="Email")
+    estado = fields.Selection([
+        ('pendiente', 'Pendiente'),
+        ('aprobado', 'Aprobado'),
+    ], string="Estado", default="pendiente")
     clases_practicas = fields.One2many('autoescuela.clase_practica', 'alumno_id', string="Clases Prácticas")
-    clases_teoricas = fields.Many2many('autoescuela.clase_teorica', 'alumno_id', string="Clases Teóricas")
+    clases_teoricas = fields.Many2many('autoescuela.clase_teorica', 'autoescuela_alumno_clase_teorica_rel', 
+                                       'alumno_id', 'clase_teorica_id', string="Clases Teóricas")
     examenes_teoricos = fields.One2many('autoescuela.examen_teorico', 'alumno_id', string="Exámenes Teóricos")
     examenes_practicos = fields.One2many('autoescuela.examen_practico', 'alumno_id', string="Exámenes Prácticos")
 
@@ -20,3 +25,7 @@ class Alumno(models.Model):
             nombre_completo = f"{alumno.nombre} {alumno.apellidos}"
             result.append((alumno.id, nombre_completo))
         return result
+    
+    def aprobar_alumno(self):
+        for record in self:
+            record.estado = 'aprobado'
