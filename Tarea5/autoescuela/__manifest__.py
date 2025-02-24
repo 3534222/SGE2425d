@@ -19,6 +19,7 @@
         'views/menu_actions.xml', # Aquí se asignan acciones a los menús
         'views/templates.xml',
         'data/demo_data.xml',
+        
     ],
     'installable': True,
     'application': True,

@@ -10,11 +10,15 @@
                 <sheet>
                     <group>
                         <field name="fecha"/>
-                        <field name="hora" widget="float_time"/> 
+                        <field name="hora" widget="float_time"/>
                         <field name="tema"/>
                         <field name="alumno_id" string="Alumno" widget="many2many_tags"/>
                         <field name="profesor_id" string="Profesor"/>
+                        <field name="estado"/>
                     </group>
+                    <div attrs="{'invisible': [('alumno_id', '=', [])]}">
+                        <span class="text-warning">No hay alumnos asignados a esta clase.</span>
+                    </div>
                 </sheet>
             </form>
         </field>
@@ -31,6 +35,7 @@
                 <field name="tema"/>
                 <field name="alumno_id" string="Alumno"/>
                 <field name="profesor_id" string="Profesor"/>
+                <field name="estado"/>
             </tree>
         </field>
     </record>

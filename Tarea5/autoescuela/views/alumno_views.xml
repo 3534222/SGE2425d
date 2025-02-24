@@ -16,6 +16,46 @@
                         <field name="estado"/>
                         <button name="aprobar_alumno" type="object" string="Aprobar" class="oe_highlight"/>
                     </group>
+                    <notebook>
+                        <page string="Clases Teóricas">
+                            <field name="clases_teoricas">
+                                <tree>
+                                    <field name="fecha"/>
+                                    <field name="hora" widget="float_time"/>
+                                    <field name="profesor_id"/>
+                                    <field name="estado"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Exámenes Teóricos">
+                            <field name="examenes_teoricos">
+                                <tree>
+                                    <field name="fecha"/>
+                                    <field name="hora" widget="float_time"/>
+                                    <field name="resultado"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Clases Prácticas">
+                            <field name="clases_practicas">
+                                <tree>
+                                    <field name="fecha"/>
+                                    <field name="hora" widget="float_time"/>
+                                    <field name="profesor_id"/>
+                                    <field name="estado"/>
+                                </tree>
+                            </field>
+                        </page>                        
+                        <page string="Exámenes Prácticos">
+                            <field name="examenes_practicos">
+                                <tree>
+                                    <field name="fecha"/>
+                                    <field name="hora" widget="float_time"/>
+                                    <field name="resultado"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
                 </sheet>
             </form>
         </field>

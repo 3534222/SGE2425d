@@ -9,5 +9,6 @@ class ExamenPractico(models.Model):
     alumno_id = fields.Many2one('autoescuela.alumno', string="Alumno", required=True)
     resultado = fields.Selection([
         ('apto', 'Apto'),
-        ('no_apto', 'No Apto')
-    ], string="Resultado", default='no_apto', required=True)
+        ('no_apto', 'No Apto'),
+        ('pendiente', 'Pendiente')
+    ], string="Resultado", default='pendiente', required=True)
